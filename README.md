@@ -6,7 +6,7 @@ Dans le cadre d'un module, le but est de rédiger un script permettant de récup
 
 ## Installation
 
-1. Installer python sur le poste
-2. Cloner le repos ( ou copier/coller le code dans un fichier .py )
+1. Installer python sur le poste ( Pour vérifier si python est bien installer et disponible il faut aller dans le terminal VSCODE via la commande : ```python --version``` )
+2. Cloner le repos ( Où copier/coller le code dans un fichier .py )
 3. Installer la version Beautiful Soup 4 via la commande : ```pip install beautifulsoup4```
 4. Lancer le script via la commande : ```python LeNomDeMonFichier.py```
