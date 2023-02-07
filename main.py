@@ -14,7 +14,11 @@ sortie = [b.attrs.get('data-value') for b in soup.select('td.posterColumn span[n
 votes = [b.attrs.get('data-value') for b in soup.select('td.ratingColumn strong')]
 
 imdb = []
-
+# Ouvrir le fichier en mode écriture
+fichier = open('250films.csv','w',encoding='utf-8')
+# Créer l'writeret fichier
+# writer = csv.writer(fichier, delimiter=',')
+writer = csv.writer(fichier, lineterminator='\n')
 for index in range(0, len(films)):
     films_string = films[index].get_text()
     film = (' '.join(films_string.split()).replace('.', ''))
@@ -29,18 +33,10 @@ for index in range(0, len(films)):
             "vote": votes[index],
             "link": liens[index]}
     imdb.append(data)
-
-for item in imdb:
-    print(data)
-
-# Ouvrir le fichier en mode écriture
-fichier = open('250films.csv','w',encoding='utf-8')
-# Créer l'objet fichier
-obj = csv.writer(fichier)
-# Chaque élément de imdb correspond à une ligne
-for item in imdb:
-    obj.writerow(item['place'])
-    obj.writerow( item['titre_du_film'])
-    obj.writerow('('+item['annee']+')')
-    obj.writerow('Casting:'+ item['star_cast'])
+    # Chaque élément de imdb correspond à une ligne
+    writer.writerow(place)
+    writer.writerow(titre_du_film)
+    writer.writerow(annee)
+    writer.writerow(casting[index])
+    writer.writerow(' ')
 fichier.close()
